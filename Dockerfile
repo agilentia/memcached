@@ -12,6 +12,7 @@ RUN yum install --enablerepo=centosplus -y centos-release-scl epel-release && \
     INSTALL_PKGS="libevent-devel libevent" && \
     yum install -y --setopt=tsflags=nodocs --enablerepo=centosplus $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
+    yum install -y telnet && \
     yum clean all -y
 
 ENV MEMCACHED_VERSION 1.4.25
