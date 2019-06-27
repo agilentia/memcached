@@ -10,6 +10,9 @@ if [ -n "${MEMCACHED_MAX_CONNECTIONS}" ]; then
     OPTIONS+=" -c $MEMCACHED_MAX_CONNECTIONS"
 fi
 
+# include logging
+OPTIONS+=" -vv >> /var/log/memcached 2>&1"
+
 set -eu
 cmd="$1"; shift
 
